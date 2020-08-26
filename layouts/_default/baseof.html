@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+{{ partial "head" . }}
+{{ partial "header" . }}
+
+<body data-barba="wrapper">
+  <div class="loading-container">
+    <div class="loading-screen"></div>
+  </div>
+  {{ block "Content" . }}{{ end }}
+  {{ partial "footer" . }}
+</body>
+
+</html>

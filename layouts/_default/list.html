@@ -1,0 +1,12 @@
+{{ define "Content" }}
+<main class="site-main" role="main" data-barba="container" data-barba-namespace="{{ lower .Page.Title }}-section">
+  {{ partial "hero" . }}
+  <h1>{{ .Title }}</h1>
+  <p>content</p>
+  {{ range .Pages }}
+  <h2>
+    <li><a href="{{ .Permalink }}" class="nav-item">{{ .Title }}</a></li>
+  </h2>
+  {{ end }}
+</main>
+{{ end }}

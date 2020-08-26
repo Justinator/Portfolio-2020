@@ -1,0 +1,53 @@
+/*--------------------------------------------------------------
+8.0 Buttons
+--------------------------------------------------------------*/
+.btn {
+	position: relative;
+	z-index: 1;
+	display: inline-block;
+	letter-spacing: 1px;
+	font-weight: 700;
+	padding: .5em;
+	text-decoration: none;
+}
+.btn-primary,
+.btn-secondary {
+	&:after {
+		content: "";
+		position: absolute;
+		bottom: 20%;
+		left: 0;
+		right: 0;
+		width: 65%;
+		height: 20%;
+		z-index: -1;
+		transition: 300ms ease-in-out;
+	}
+}
+.btn-primary {
+	color: $lightBlue;
+	&:after {
+		background-color: $darkestBlue;
+	}
+	&:hover,
+	&:focus {
+		&:after {
+			width: 100%;
+			height: 60%;
+		}
+	}
+}
+.btn-secondary {
+	color: $darkestBlue;
+	&:after {
+		background-color: $lightGrey;
+	}
+	&:hover,
+	&:focus {
+		color: #fff;
+		&:after {
+			width: 100%;
+			height: 100%;
+		}
+	}
+}

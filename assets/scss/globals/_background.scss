@@ -1,0 +1,44 @@
+.cover {
+  background-size: cover!important;
+}
+.bg-center {
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.bg-top {
+  background-repeat: no-repeat;
+  background-position: top center;
+}
+.bg-right {
+  background-repeat: no-repeat;
+  background-position: center right;
+}
+.bg-bottom {
+  background-repeat: no-repeat;
+  background-position: bottom center;
+}
+.bg-left {
+  background-repeat: no-repeat;
+  background-position: center left;
+}
+.bg-light {
+  background-color: #f8f9fa !important;
+}
+.bg-dark {
+  background-color: #343a40 !important;
+}
+.bg-black {
+  background-color: $black;
+}
+.bg-grey {
+  background-color: $lightGrey;
+}
+.bg-primary {
+  background-color: $brandColor !important;
+}
+.bg-secondary {
+  background-color: $secondaryBrandAccent !important;
+}
+.bg-accent {
+  background-color: $accentColor !important;
+}

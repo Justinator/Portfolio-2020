@@ -1,0 +1,31 @@
+<div class="hero {{ lower .Page.Title }}-hero w-90">
+    <div class="hero-inner-wrapper flex-container w-100">
+        <div class="w-100 w-50-l flex flex-center">
+            <div class="hero-text-block">
+                <span class="position">Front-End Developer</span>
+                <span class="position">Web Designer</span>
+                <h1 class="hero-title">{{ .Site.Params.Author }}</h1>
+                <p class="g2">I design websites that generate leads and help businesses grow</p>
+                <a href="/work" class="btn btn-primary">
+                    View Web Design Work
+                </a>
+            </div>
+        </div>
+        <div class="w-100 w-50-l hero-image-wrapper">
+            <div class="flex flex-center flex-justify-center">
+                <span class="large-circle"></span>
+                <img src="/images/front-end-web-developer-web-designer.png"
+                    alt="Front End Web Developer, Web Designer, Justin Parsons" class="headshot-image">
+            </div>
+            <span class="medium-circle wordpress">{{ partial "svg-icons/wordpress" }}</span>
+            <span class="medium-circle php">{{ partial "svg-icons/php" }}</span>
+            <span class="medium-circle html">{{ partial "svg-icons/html5.html" }}</span>
+            <span class="medium-circle css">{{ partial "svg-icons/css3" }}</span>
+            <span class="medium-circle hugo"><img src="/images/hugo.svg" alt=""></span>
+            <span class="small-circle small-1"></span>
+            <span class="small-circle small-2"></span>
+            <span class="small-circle small-3"></span>
+            <span class="small-circle small-4"></span>
+        </div>
+    </div>
+</div>

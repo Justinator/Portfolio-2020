@@ -1,0 +1,10 @@
+* {
+    display: grid;
+}
+body {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    border-radius: 10px;
+}

@@ -1,0 +1,26 @@
+baseURL = "https://heuristic-blackwell-c7f659.netlify.app/"
+languageCode = "en-us"
+title = "Web Developer | Web Designer | Justin Parsons"
+
+#################### default parameters ################################
+[params]
+logo = "images/logo.svg"
+# Meta data
+description = "This is meta description"
+author = "Justin Parsons"
+# Contact Information
+mobile = "0124857985320"
+email = "demo@email.com"
+location = "North Main Street,Brooklyn Australia"
+# Google Analitycs
+google_analitycs_id = "" # Your ID# search
+
+sectionPagesMenu = "Main"
+
+# CSS Plugins
+[[params.plugins.css]]
+link = "plugins/swiper/css/swiper-bundle.min.css"
+
+# JS Plugins
+[[params.plugins.js]]
+link = "plugins/swiper/js/swiper-bundle.min.js"

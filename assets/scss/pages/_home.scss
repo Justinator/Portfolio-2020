@@ -1,0 +1,309 @@
+.hero-text-block {
+    padding: 20px 20px 20px 0;
+    opacity: 0;
+    transform: translateY(50px);
+}
+.position {
+    background-color: $darkestBlue;
+    padding: .5rem;
+}
+.position:nth-child(2) {
+    margin-left: 10px;
+};
+.hero-inner-wrapper {
+    height: 100%;
+}
+.hero-image-wrapper {
+    position: relative;
+    .headshot-image {
+        position: absolute;
+        bottom: 0;
+        z-index: 10;
+        max-width: 400px;
+        @include breakpoint (sm) {
+            max-width: 100%;
+        }
+    }
+}
+.large-circle, .medium-circle, .small-circle {
+    opacity: 0;
+    transform: scale(0);
+}
+.large-circle {
+    display: inline-block;
+    background-color: $darkestBlue;
+    border-radius: 50%;
+    height: 25rem;
+    width: 25rem;
+    margin-top: 4rem;
+    @include breakpoint (sm) {
+        height: 32rem;
+        width: 32rem;
+    }
+    @include breakpoint (lg) {
+        height: 28rem;
+        width: 28rem;
+    }
+    @include breakpoint(xl) {
+        height: 32rem;
+        width: 32rem;
+    }
+}
+.medium-circle {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $medBlue;
+    border-radius: 50%;
+    height: 4rem;
+    width: 4rem;
+    svg {
+        width: 40px;
+        fill: $lightBlue;
+    }
+    @include breakpoint (sm) {
+        height: 8rem;
+        width: 8rem;
+    svg {
+        width: 75px;
+        fill: $lightBlue;
+    }
+    }
+}
+.wordpress {
+    top: 15%;
+    left: 12%;
+    @include breakpoint (smallerScreen) {
+        left: 24%;
+    }
+    @include breakpoint(sm) {
+        top: 8%;
+        left: 20%;
+    }
+    @include breakpoint(smallTablet) {
+        left: 27%;
+    }
+    @include breakpoint(lg) {
+        top: 15%;
+        left: 10%;
+    }
+    @include breakpoint(xl) {
+        left: 16%;
+    }
+}
+.php {
+    top: 52%;
+    left: -3%;
+    @include breakpoint (smallerScreen) {
+        left: 8%;
+    }
+    @include breakpoint(sm) {
+        left: 6%;
+    }
+    @include breakpoint(smallTablet) {
+        left: 14%;
+    }
+    @include breakpoint(lg) {
+        left: 0;
+    }
+    @include breakpoint(xl) {
+        left: 5%;
+    }
+}
+.hugo {
+    top: 10%;
+    right: 20%;
+    img {
+        width: 30px;
+    }
+    @include breakpoint (smallerScreen) {
+        right: 25%;
+    }
+    @include breakpoint(sm) {
+        top: 4%;
+        right: 20%;
+        img {
+            width: 70px;
+        }
+    }
+    @include breakpoint(smallTablet) {
+        right: 25%;
+    }
+    @include breakpoint(lg) {
+        top: 6%;
+        right: 10%;
+    }
+    @include breakpoint(xl) {
+        top: 8%;
+        right: 15%;
+    }
+}
+.html {
+    top: 25%;
+    right: 5%;
+    svg {
+        width: 30px;
+    }
+    @include breakpoint (smallerScreen) {
+        right: 15%;
+    }
+    @include breakpoint(sm) {
+        top: 30%;
+        right: 8%;
+        svg {
+            width: 60px;
+        }
+    }
+    @include breakpoint(smallTablet) {
+        right: 15%;
+    }
+    @include breakpoint(lg) {
+       right: -5%;
+    }
+    @include breakpoint(xl) {
+        right: 0;
+    }
+}
+.css {
+    top: 60%;
+    right: 0;
+    svg {
+        width: 30px;
+    }
+    @include breakpoint (smallerScreen) {
+        right: 13%;
+    }
+    @include breakpoint(sm) {
+        top: 60%;
+        right: 5%;
+        svg {
+            width: 60px;
+        }
+    }
+    @include breakpoint(smallTablet) {
+        right: 15%;
+    }
+    @include breakpoint(lg) {
+        right: 0;
+    }
+    @include breakpoint(xl) {
+        right: 9%;
+    }
+}
+.small-circle {
+    display: inline-block;
+    background-color: $lightBlue;
+    border-radius: 50%;
+    position: absolute;
+}
+.small-1 {
+    height: 1rem;
+    width: 1rem;
+    top: 45%;
+    right: 10%;
+    @include breakpoint(sm) {
+        height: 2rem;
+        width: 2rem;
+        top: 35%;
+        right: 35%;
+    }
+    @include breakpoint(lg) {
+        top: 50%;
+        right: 12%;
+    }
+    @include breakpoint(xl) {
+        right: 15%;
+    }
+}
+.small-2 {
+    height: 2rem;
+    width: 2rem;
+    top: 25%;
+    right: 25%;
+    @include breakpoint (smallerScreen) {
+        top: 30%;
+        right: 30%;
+    }
+    @include breakpoint(sm) {
+        height: 3rem;
+        width: 3rem;
+        top: -5%;
+        right: 40%;
+    }
+    @include breakpoint(lg) {
+        top: 8%;
+    }
+}
+.small-3 {
+    height: 3rem;
+    width: 3rem;
+    top: 30%;
+    left: 15%;
+    @include breakpoint(sm) {
+        height: 4rem;
+        width: 4rem;
+        left: 34%;
+    }
+    @include breakpoint(smallTablet) {
+        left: 25%;
+    }
+    @include breakpoint(lg) {
+        top: 40%;
+        left: 15%;
+    }
+    @include breakpoint(xl) {
+        top: 35%;
+        left: 20%;
+    }
+}
+.small-4 {
+    height: 2rem;
+    width: 2rem;
+    top: 80%;
+    left: 15%;
+    @include breakpoint(sm) {
+        height: 4rem;
+        width: 4rem;
+        left: 20%;
+    }
+}
+.section-two {
+    background-color: $darkestBlue;
+    height: 50vh;
+}
+.rotated-title {
+    transform: rotate(270deg);
+    position: fixed;
+    bottom: 200px;
+    right: -100px;
+    font-size: .8em;
+    mix-blend-mode: difference;
+    z-index: 99;
+}
+.intro-section {
+    position: relative;
+    .text-block {
+        position: relative;
+        top: -50px;
+    }
+}
+.parallax-title {
+    position: relative;
+    color: rgba(255,255,255,.01);
+    font-size: 10em;
+    white-space: nowrap;
+    left: 20%;
+}
+.blue-background {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    width: 20%;
+    height: 400px;
+    background-color: $darkestBlue;
+}
+.featured-work {
+    margin-top: -50px;
+    background-color: $medBlue;
+}

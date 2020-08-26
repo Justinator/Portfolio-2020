@@ -1,0 +1,28 @@
+<footer class="site-footer">
+  <div class="container-wide-right footer">
+    <nav class="primary-nav">
+      <div class="logo-wrapper">
+        <a class="brand-logo" href="{{ site.BaseURL }}">
+          <img src="{{ site.Params.logo | absURL }}" alt="{{ site.Title }}" class="img-responsive dim" />
+        </a>
+      </div>
+      <ul class="footer-nav-list">
+        {{ $url := .RelPermalink }}
+        {{ range site.Menus.Main }}
+        {{ $active := eq $url .URL }}
+        <li class="nav-list-item">
+          <a {{if $active }}class="current nav-item" {{end}} class="nav-item" href="{{ .URL }}"
+            title="{{ .Title }}">{{ .Title }}</a>
+        </li>
+        {{ end }}
+      </ul>
+    </nav>
+  </div>
+</footer>
+<span class="rotated-title">Front-End Developer/Web Designer</span>
+<div class="progress-container">
+  <div class="progress-bar"></div>
+</div>
+<script src="https://unpkg.com/@barba/core"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/ScrollTrigger.min.js"></script>
+{{ partial "scripts" . }}

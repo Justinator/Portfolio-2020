@@ -1,0 +1,11 @@
+.footer {
+    background-color: $darkestBlue;
+    padding: 2em;
+    .footer-nav-list {
+        position: relative;
+        display: flex;
+        .nav-item {
+            padding: 1em;
+        }
+    }
+}

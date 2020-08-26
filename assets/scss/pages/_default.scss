@@ -1,0 +1,68 @@
+.screen-reader-skip-to-content {
+	position: absolute;
+	height: auto;
+	width: auto;
+	display: block;
+	top: -100px;
+	background: $darkestBlue;
+	color: $lightGrey;
+	padding: 20px;
+	z-index: 1000000000;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	a {
+		color: $lightGrey;
+	}
+	&:focus {
+		left: 6px;
+		top: 7px;
+	}
+}
+.screen-reader-text {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	-webkit-clip-path: inset(50%);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important;
+}
+.loading-screen {
+    position: relative;
+    padding: 0;
+    background-color: $darkestBlue;
+    width: 0;
+    height: 100%;
+}
+.loading-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 9999;
+    pointer-events: none;
+}
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    margin-top: 85px;
+    margin-left: auto;
+    @include breakpoint (lg) {
+        height: 85vh;
+    }
+}
+.hero-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -1,0 +1,18 @@
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="{{ .Page.Description }}">
+    <title>{{ .Site.Title }} | {{ .Page.Title }}</title>
+    {{ $swipercss := resources.Get "css/swiper-bundle.css" }}
+    {{ $scss := resources.Get "scss/main.scss" | toCSS }}
+    {{ $postcss := $scss | resources.PostCSS | minify }}
+    {{ $bundle := slice $swipercss | resources.Concat "css/bundle.css" }}
+    {{ $css := $bundle | resources.PostCSS | minify }}
+    <link rel="stylesheet" href="{{ $css.Permalink }}" media="screen" />
+    <link rel="stylesheet" href="{{ $postcss.Permalink }}" media="screen" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;700;900&display=swap"
+        rel="stylesheet" />
+    {{ "<!--Favicon-->" | safeHTML }}
+    <link rel="shortcut icon" href="{{ `images/favicon.png` | absURL }}" type="image/x-icon">
+    <link rel="icon" href="{{ `images/favicon.png` | absURL }}" type="image/x-icon">
+</head>

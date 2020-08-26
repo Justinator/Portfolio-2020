@@ -1,0 +1,17 @@
+<div class="hero single-blog-hero w-90">
+  <div class="hero-inner-wrapper flex-container w-100">
+    <div class="w-100 w-50-l flex flex-center">
+      <div class="hero-text-block">
+        <h1>{{ .Title }}</h1>
+        <span class="tag">{{ range $index, $elements:= .Params.Categories }}
+          {{ if ne $index 0 }}, {{ end }}<a href="{{ `category/` | relLangURL }}{{ . | lower }}">{{ . | humanize }}</a>
+          {{ end }}</span>
+      </div>
+    </div>
+    <div class="w-100 w-50-l hero-image-wrapper">
+      <div class="background-image">
+        <img src="{{ .Params.Image }}" alt="{{ .Params.ImageAlt }}" class="blog-cover">
+      </div>
+    </div>
+  </div>
+</div>

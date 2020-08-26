@@ -1,0 +1,14 @@
+/* Reading Progress Indicator */
+.progress-container {
+    height: 50px;
+    width: 1px;
+    position: fixed;
+    z-index: 9;
+    bottom: 10px;
+    right: 32px;
+    background-color: $darkestBlue;
+    transform: rotate(180deg);
+}
+.progress-bar {
+    background-color: $lightGrey;
+}

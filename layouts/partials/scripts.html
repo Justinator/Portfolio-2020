@@ -1,0 +1,7 @@
+{{ $gsap := resources.Get "js/plugins/gsap/gsap.min.js" }}
+{{ $scrollTrigger := resources.Get "js/plugins/gsap/ScrollTrigger.min.js" }}
+{{ $swiper := resources.Get "js/plugins/swiper/swiper-bundle.js" }}
+{{ $main := resources.Get "js/main.js" }}
+{{ $bundle := slice $gsap $scrollTrigger $swiper $main | resources.Concat "js/bundle.js" }}
+{{ $js := $bundle | minify | fingerprint }}
+<script src="{{ $js.Permalink }}"></script>
