@@ -11,7 +11,7 @@
         {{ range site.Menus.Main }}
         {{ $active := eq $url .URL }}
         <li class="nav-list-item">
-          <a {{if $active }}class="current nav-item" {{end}} class="nav-item" href="{{ .URL }}"
+          <a {{if $active }}class="current footer-nav-item" {{end}} class="footer-nav-item" href="{{ .URL }}"
             title="{{ .Title }}">{{ .Title }}</a>
         </li>
         {{ end }}

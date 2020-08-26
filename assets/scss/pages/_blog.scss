@@ -1,0 +1,11 @@
+.cats {
+    background-color: $darkestBlue;
+    padding: .5rem;
+    a {
+        color: $lightGrey;
+        text-decoration: none;
+    }
+}
+.cats + .cats {
+    margin-left: 10px;
+}

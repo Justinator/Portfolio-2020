@@ -39,7 +39,7 @@
 .nav-list-item {
   list-style-type: none;
 }
-.nav-item {
+.nav-item, .footer-nav-item {
   position: relative;
   display: inline-block;
   text-decoration: none;
@@ -49,7 +49,6 @@
   font-weight: 700;
   letter-spacing: 2px;
   opacity: 0;
-  transform: translateY(-20px);
   &::before, &::after {
     position: absolute;
     top: 15%;

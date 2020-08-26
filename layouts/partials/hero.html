@@ -1,8 +1,14 @@
-<div class="hero {{ lower .Page.Title }}-hero">
-  <div class="flex-container w-100">
-    <div class="w-100 w-50-l">
-      <h1 class="hero-title">{{ .Page.Title }}</h1>
+<div class="med-hero {{ lower .Page.Title }}-hero w-90">
+  <div class="hero-inner-wrapper flex-container w-100">
+    <div class="w-100 w-50-l flex flex-center">
+      <div class="hero-text-block">
+        <h1>{{ .Title }}</h1>
+      </div>
     </div>
-    <div class="w-100 w-50-l"></div>
+    <div class="w-100 w-50-l hero-image-wrapper">
+      <div class="background-image">
+        <img src="/images/{{ lower .Page.Title | urlize }}-background.jpg" alt="">
+      </div>
+    </div>
   </div>
 </div>

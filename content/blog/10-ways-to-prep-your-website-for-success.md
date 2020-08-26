@@ -5,7 +5,7 @@ author: Justin Parsons
 date: 2020-08-24T21:07:27-05:00
 image: /images/blog/10waystoprepyourwebsiteforsuccess.jpg
 imageAlt: test alt text
-categories: ["website design", "website strategy"]
+categories: ["Website Design", "Website Strategy"]
 ---
 
 <img src="/img/blog/10WaysToPrepYourWebsiteForSuccess.jpg"

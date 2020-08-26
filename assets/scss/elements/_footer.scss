@@ -4,7 +4,8 @@
     .footer-nav-list {
         position: relative;
         display: flex;
-        .nav-item {
+        .footer-nav-item {
+            opacity: 1;
             padding: 1em;
         }
     }

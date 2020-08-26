@@ -47,7 +47,7 @@
     z-index: 9999;
     pointer-events: none;
 }
-.hero {
+.hero, .med-hero {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -59,6 +59,11 @@
     margin-left: auto;
     @include breakpoint (lg) {
         height: 85vh;
+    }
+}
+.med-hero {
+    @include breakpoint (lg) {
+        height: 60vh;
     }
 }
 .hero-inner {

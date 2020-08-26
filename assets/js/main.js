@@ -134,9 +134,8 @@ function contentAnimation() {
     });
     tl.to(".nav-item", {
         opacity: 1,
-        duration: 0.3,
+        duration: 0.5,
         stagger: 0.2,
-        y: 0,
     });
     tl.to(".hero-text-block", {
         opacity: 1,
