@@ -5,7 +5,7 @@
                 {{ with .Params.hero }}
                 <span class="position">{{ .position1 }}</span>
                 <span class="position">{{ .position2 }}</span>
-                <h1 class="hero-title">{{ .Site.Params.Author }}</h1>
+                <h1 class="hero-title">{{ site.Params.author }}</h1>
                 <h2>{{ .subhead }}</h2>
                 {{ if .btn_text }}
                     <a href="/work" class="btn btn-primary">{{ .btn_text }}</a>

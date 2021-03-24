@@ -4,7 +4,7 @@
         <div class="cta-inner">
             <h3 class="g1">{{ .heading }}</h3>
             <!-- <p>{{ .copy }}</p> -->
-            <a href="mailto:justin.parsons24@gmail.com" class="btn btn-primary">{{ .btn_text }}</a>
+            <a href="mailto:{{ site.Params.email }}" class="btn btn-primary">{{ .btn_text }}</a>
         </div>
     </div>
     {{ end }}
