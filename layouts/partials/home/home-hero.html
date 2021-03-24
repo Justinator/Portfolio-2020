@@ -2,13 +2,15 @@
     <div class="hero-inner-wrapper flex-container w-100">
         <div class="w-100 w-50-l flex flex-center">
             <div class="hero-text-block">
-                <span class="position">Front-End Developer</span>
-                <span class="position">Web Designer</span>
+                {{ with .Params.hero }}
+                <span class="position">{{ .position1 }}</span>
+                <span class="position">{{ .position2 }}</span>
                 <h1 class="hero-title">{{ .Site.Params.Author }}</h1>
-                <p class="g2">I design websites that generate leads and help businesses grow</p>
-                <a href="/work" class="btn btn-primary">
-                    View Web Design Work
-                </a>
+                <h2>{{ .subhead }}</h2>
+                {{ if .btn_text }}
+                    <a href="/work" class="btn btn-primary">{{ .btn_text }}</a>
+                {{ end }}
+                {{ end }}
             </div>
         </div>
         <div class="w-100 w-50-l hero-image-wrapper">

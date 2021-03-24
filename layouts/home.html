@@ -1,10 +1,7 @@
-{{ define "Content" }}
-<main id="main-content" class="site-main" role="main" data-barba="container"
-    data-barba-namespace="{{ lower .Page.Title }}">
-    {{ partial "home/home-hero" . }}
-    {{ partial "home/intro" . }}
-    {{ partial "portfolio-slider" . }}
-    {{ partial "testimonials" . }}
-    {{ partial "cta" . }}
-</main>
+{{ define "main" }}
+{{ partial "home/home-hero" . }}
+{{ partial "home/intro" . }}
+{{ partial "portfolio-slider" . }}
+{{ partial "testimonials" . }}
+{{ partial "cta" . }}
 {{ end }}

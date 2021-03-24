@@ -6,16 +6,19 @@
           <img src="{{ site.Params.logo | absURL }}" alt="{{ site.Title }}" class="img-responsive dim" />
         </a>
       </div>
+      {{ with .Site.Menus.main }}
       <ul class="footer-nav-list">
-        {{ $url := .RelPermalink }}
-        {{ range site.Menus.Main }}
-        {{ $active := eq $url .URL }}
-        <li class="nav-list-item">
-          <a {{if $active }}class="current footer-nav-item" {{end}} class="footer-nav-item" href="{{ .URL }}"
-            title="{{ .Title }}">{{ .Title }}</a>
-        </li>
-        {{ end }}
-      </ul>
+          {{ range . }}
+          <li class="nav-list-item">
+            <a class="nav-item" class="footer-nav-item" href="{{ .URL }}" aria-label="{{ .Name }}"
+              title="{{ .Name }}">{{ .Name }}</a>
+          </li>
+          {{ end }}
+          <li class="nav-list-item">
+            <a href="/resume/" class="footer-nav-item">Resume</a>
+          </li>
+        </ul>
+      {{ end }}
     </nav>
   </div>
 </footer>
@@ -23,6 +26,4 @@
 <div class="progress-container">
   <div class="progress-bar"></div>
 </div>
-<script src="https://unpkg.com/@barba/core"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/ScrollTrigger.min.js"></script>
 {{ partial "scripts" . }}

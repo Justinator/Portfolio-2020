@@ -9,10 +9,16 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "autoprefixer": "^9.8.6"
+    "@fullhuman/postcss-purgecss": "^4.0.3",
+    "autoprefixer": "^9.8.6",
+    "postcss": "^8.2.8"
   },
   "dependencies": {
-    "@barba/core": "^2.9.7"
+    "@barba/core": "^2.9.7",
+    "@barba/prefetch": "^2.1.10",
+    "gsap": "^3.6.0",
+    "locomotive-scroll": "^4.0.6",
+    "swiper": "^6.4.5"
   },
   "browserslist": [
     "last 4 Chrome versions",

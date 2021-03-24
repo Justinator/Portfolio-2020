@@ -2,12 +2,13 @@
     <div class="blue-background"></div>
     <div class="container-wide-right">
         <div class="text-block">
-            <h2 class="parallax-title parallax-1">Front-End Developer/Web Designer</h2>
-            <h3 class="g1">Intro Heading</h3>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam quae error nobis autem aliquam cupiditate
-            iure
-            ullam, distinctio earum sequi similique sit. Corporis ad exercitationem, voluptate tempora quod saepe
-            omnis?
+            {{ with .Params.hero }}
+            <h2 class="parallax-title parallax-1">{{ .position1 }}</h2>
+            {{ end }}
+            {{ with .Params.intro }}
+            <h3 class="g1">{{ .heading | markdownify}}</h3>
+            <p>{{ .copy | markdownify }}</p>
+            {{ end }}
         </div>
     </div>
 </section>

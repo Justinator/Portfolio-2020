@@ -1,11 +1,14 @@
-{{ define "Content" }}
-<main class="site-main" role="main" data-barba="container" data-barba-namespace="{{ lower .Page.Title }}-section">
-  {{ partial "hero" . }}
-  <h1>{{ .Title }}</h1>
-  {{ range .Pages }}
-  <h2>
-    <li><a href="{{ .Permalink }}" class="nav-item">{{ .Title }}</a></li>
-  </h2>
+{{ define "main" }}
+<section class="fade-up container padding-top-10 padding-bottom-10" data-scroll-section>
+  {{ with .Params.intro }}
+  <h2 class="primary-text">{{ .heading }}</h2>
+  <p class="g5">{{ .subhead }}</p>
   {{ end }}
-</main>
+  <div class="blog-container">
+    {{ range .Paginator.Pages.ByDate.Reverse }}
+    {{ .Render "article" }}
+    {{ end }}
+  {{ partial "blog/custom-pagination.html" . }}
+  </div>
+</section>
 {{ end }}

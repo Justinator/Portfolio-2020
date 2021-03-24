@@ -1,4 +1,13 @@
-console.log("Justin Parsons");
+import barba from '@barba/core';
+import barbaPrefetch from '@barba/prefetch';
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+// import LocomotiveScroll from 'locomotive-scroll';
+import Swiper from 'swiper';
+import { pageTransitionOut, pageTransitionIn, contentAnimation, updateMenu } from './partials';
+
+barba.use(barbaPrefetch);
+gsap.registerPlugin(ScrollTrigger);
 
 var menuButton = document.querySelector(".menu-button-wrap");
 var mobileNav = document.querySelector(".nav-list");
@@ -7,9 +16,26 @@ var hamburger = document.querySelector(".hamburger");
 menuButton.addEventListener("click", toggleMobileMenu);
 
 function toggleMobileMenu() {
-    mobileNav.classList.toggle("nav-open");
-    hamburger.classList.toggle("is-active");
+    if (mobileNav.classList.contains("nav-open")) {
+        this.setAttribute("aria-expanded", "false");
+        this.setAttribute("aria-label", "menu");
+        mobileNav.classList.remove("nav-open");
+        hamburger.classList.remove("is-active");
+      } else {
+          mobileNav.classList.add("nav-open");
+          hamburger.classList.add("is-active");
+        this.setAttribute("aria-label", "close menu");
+        this.setAttribute("aria-expanded", "true");
+      }
 }
+
+function updateAria() {
+    hamburger.setAttribute("aria-expanded", "false");
+    hamburger.setAttribute("aria-label", "open mobile menu");
+}
+
+let scroll;
+const selectAll = (e) => document.querySelectorAll(e);
 
 // var parallaxTitle1 = document.querySelector(".parallax-1");
 // var parallaxTitle2 = document.querySelector(".parallax-2");
@@ -104,87 +130,55 @@ function delay(n) {
     });
 }
 
-function pageTransition() {
-    var tl = gsap.timeline();
-    tl.to(".loading-screen", {
-        duration: .5,
-        width: "100%",
-        left: "0%",
-        ease: "Expo.easeInOut",
-    });
-    tl.to(".loading-screen", {
-        duration: .5,
-        width: "100%",
-        left: "100%",
-        ease: "Expo.easeInOut",
-        delay: 0.3,
-    });
-    tl.set(".loading-screen", { left: "-100%" });
-    if (mobileNav.classList.contains("nav-open")) {
-        mobileNav.classList.remove("nav-open");
-        hamburger.classList.remove("is-active");
-    }
+function homepageAnimations() {
+    contentAnimation();
+    scrollTrigger();
+    swiperInit();
 }
 
-function contentAnimation() {
-    var tl = gsap.timeline();
-    tl.to(".brand-logo", {
-        opacity: 1,
-        duration: 0.3,
+function initPageTransitions() {
+    // do something before the transition starts
+    barba.hooks.before(() => {
+        updateMenu();
+        swiperInit();
     });
-    tl.to(".nav-item", {
-        opacity: 1,
-        duration: 0.5,
-        stagger: 0.2,
+
+    // do something after the transition finishes
+    barba.hooks.after(() => {
+        homepageAnimations();
+        updateAria();
     });
-    tl.to(".hero-text-block", {
-        opacity: 1,
-        duration: 0.5,
-        y: 0,
+
+    // scroll to the top of the page
+    barba.hooks.enter(() => {
+        window.scrollTo(0, 0);
+        scrollTrigger();
+        swiperInit();
     });
-    tl.to(".large-circle", {
-        opacity: 1,
-        scale: 1,
-        duration: 0.3,
-    });
-    tl.to(".medium-circle", {
-        opacity: 1,
-        scale: 1,
-        duration: 0.3,
-        stagger: 0.1,
-    });
-    tl.to(".small-circle", {
-        opacity: 1,
-        scale: 1,
-        duration: 0.3,
-        stagger: 0.1,
-    });
+    
+        barba.init({
+            timeout: 7000,
+            transitions: [{
+                name: 'fade-transition',
+                once(data) {
+                    // do something once on the initial page load
+                    homepageAnimations();
+                },
+                async leave(data) {
+                    // animate loading screen in
+                    await pageTransitionOut(data.current);
+                    data.current.container.remove();
+                },
+                async enter(data) {
+                    // animate loading screen away
+                    pageTransitionIn(data.next);
+                },
+                async beforeEnter(data) {
+                    homepageAnimations();
+                    ScrollTrigger.getAll().forEach(t => t.kill());
+                }
+    
+            }]
+        });
 }
-
-
-
-barba.init({
-    sync: true,
-
-    transitions: [
-        {
-            async leave(data) {
-                const done = this.async();
-
-                pageTransition();
-                await delay(1000);
-                done();
-            },
-            async enter(data) {
-                contentAnimation();
-                scrollTrigger();
-                swiperInit();
-            },
-            async once(data) {
-                contentAnimation();
-                scrollTrigger();
-                swiperInit();
-            },
-        },
-    ],
-});
+initPageTransitions();

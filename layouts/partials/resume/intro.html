@@ -1,0 +1,26 @@
+<section class="professional-experience intro-section">
+    <div class="blue-background"></div>
+    <div class="container-wide-right">
+        <div class="text-block">
+            {{ with .Params.hero }}
+            <h2 class="parallax-title parallax-1">{{ .position1 }}</h2>
+            {{ end }}
+            {{ with .Params.intro }}
+            <h3 class="g1">{{ .heading }}</h3>
+            {{ range .experience }}
+            <h4>{{ .heading | markdownify }}</h4>
+            <ul>
+                {{ range .experience_list }}
+                    <li>{{ .item | markdownify }}</li>
+                {{ end }}
+            </ul>
+            {{ end }}
+            {{ end }}
+            {{ with .Params.education }}
+                <h3 class="g1">{{ .heading }}</h3>
+                <h4>{{ .subhead }}</h4>
+                <p>{{ .copy | markdownify }}</p>
+            {{ end }}
+        </div>
+    </div>
+</section>

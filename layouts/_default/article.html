@@ -1,0 +1,27 @@
+<article class="fade-up blog-summary">
+    <a href="{{ .Permalink }}" class="blog-summary__link">
+      <div class="flex flex-column flex-row-m">
+        <div class="w-100 w-30-m">
+          <div class="blog-summary__image-wrap">
+            {{ $has_image := .Params.image }}
+            {{ if $has_image }}
+            <img src="{{ .Permalink }}{{ .Params.image }}" alt="" class="blog-summary__img img-responsive zoom-images" width="300" height="200" loading="lazy">
+            {{ else }}
+            <img src="https://source.unsplash.com/random/800x600" alt="" class="blog-summary__img img-responsive zoom-images" width="300" height="200" loading="lazy">
+            {{  end }}
+          </div>
+        </div>
+        <div class="w-100 w-70-m">
+          <div class="blog-summary__content">
+            <h3 class="blog-summary__title g4">{{ .Title }}</h3>
+            <p class="blog-summary__summary">
+              {{ if .Description }}{{ .Description  | truncate 125 }}{{ else }}{{ .Content | truncate 125 }}{{ end }}
+            </p>
+            <span class="blog-summary__read-more">
+              Read More {{ partial "svg-icons/arrow-right.svg" . }}
+            </span>
+          </div>
+        </div>
+      </div>
+    </a>
+  </article>

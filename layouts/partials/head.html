@@ -3,6 +3,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="{{ .Page.Description }}">
     <title>{{ .Site.Title }} | {{ .Page.Title }}</title>
+
+    <meta property="og:site_name" content="{{ .Site.Title }}">
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="{{ .Title }}" />
+    <meta property="og:url" content="{{ .Permalink }}" />
+    <meta property="og:locale" content="en_US" />
+
+    {{ if .Description }}
+    <meta property="og:description" content="{{ .Description }}" />
+    <meta name="description" content="{{ .Description }}">
+    {{ end }}
+
+    <link rel="canonical" href="{{ .Permalink }}" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@p4lm" />
+
     {{ $swipercss := resources.Get "css/swiper-bundle.css" }}
     {{ $scss := resources.Get "scss/main.scss" | toCSS }}
     {{ $postcss := $scss | resources.PostCSS | minify }}
@@ -10,8 +27,15 @@
     {{ $css := $bundle | resources.PostCSS | minify }}
     <link rel="stylesheet" href="{{ $css.Permalink }}" media="screen" />
     <link rel="stylesheet" href="{{ $postcss.Permalink }}" media="screen" />
+
+    <link rel="preconnect" href="https://www.google-analytics.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;700;900&display=swap"
         rel="stylesheet" />
+
+    <link rel="preload" href="{{ "js/main.js" | absURL }}" as="script">
+
     {{ "<!--Favicon-->" | safeHTML }}
     <link rel="shortcut icon" href="{{ `images/favicon.png` | absURL }}" type="image/x-icon">
     <link rel="icon" href="{{ `images/favicon.png` | absURL }}" type="image/x-icon">

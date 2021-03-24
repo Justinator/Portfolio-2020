@@ -1,7 +1,14 @@
-{{ $gsap := resources.Get "js/plugins/gsap/gsap.min.js" }}
-{{ $scrollTrigger := resources.Get "js/plugins/gsap/ScrollTrigger.min.js" }}
-{{ $swiper := resources.Get "js/plugins/swiper/swiper-bundle.js" }}
-{{ $main := resources.Get "js/main.js" }}
-{{ $bundle := slice $gsap $scrollTrigger $swiper $main | resources.Concat "js/bundle.js" }}
-{{ $js := $bundle | minify | fingerprint }}
-<script src="{{ $js.Permalink }}"></script>
+{{ $opts := (dict "minify" true "target" "es2017" "format" "cjs") }}
+
+{{ if .Site.Params.MinifyBundles }}
+{{ $main := resources.Get "js/main.js" | js.Build $opts }}
+{{ $libs := resources.Get "js/libs.js" | js.Build $opts }}
+{{ $bundle := slice $libs $main | resources.Concat "bundle.js" | resources.Fingerprint "sha512" }}
+<script src="{{ $bundle.RelPermalink }}" integrity="{{ $bundle.Data.Integrity }}"></script>
+{{ else }}
+{{ $libs := resources.Get "js/libs.js" | js.Build $opts | resources.Fingerprint "sha512" }}
+<script src="{{ $libs.RelPermalink }}" integrity="{{ $libs.Data.Integrity }}"></script>
+
+{{ $mainDev := resources.Get "js/main.js" | resources.Fingerprint "sha512" }}
+<script src="{{ $mainDev.RelPermalink }}" integrity="{{ $mainDev.Data.Integrity }}"></script>
+{{ end }}

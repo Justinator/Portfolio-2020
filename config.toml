@@ -1,26 +1,67 @@
 baseURL = "https://kind-golick-a17994.netlify.app/"
 languageCode = "en-us"
-title = "Web Developer | Web Designer | Justin Parsons"
+title = "Front of the Font End Web Developer | Web Designer | Justin Parsons"
+enableRobotsTXT = true
+summaryLength = 30
+# post pagination
+paginate = "8"
 
 #################### default parameters ################################
 [params]
-logo = "images/logo.svg"
-# Meta data
-description = "This is meta description"
-author = "Justin Parsons"
-# Contact Information
-mobile = "0124857985320"
-email = "demo@email.com"
-location = "North Main Street,Brooklyn Australia"
-# Google Analitycs
-google_analitycs_id = "" # Your ID# search
+    logo = "images/logo.svg"
+    # Meta data
+    description = "This is meta description"
+    author = "Justin Parsons"
+    # Contact Information
+    email = "justin.parsons24@gmail.com"
+    phone = "715-741-0208"
+    website = "seejustincode.com"
+    linkedin = "https://www.linkedin.com/in/justin-parsons24/"
+    minifyBundles = true
 
 sectionPagesMenu = "Main"
 
 # CSS Plugins
 [[params.plugins.css]]
-link = "plugins/swiper/css/swiper-bundle.min.css"
+    link = "plugins/swiper/css/swiper-bundle.min.css"
 
 # JS Plugins
 [[params.plugins.js]]
-link = "plugins/swiper/js/swiper-bundle.min.js"
+    link = "plugins/swiper/js/swiper-bundle.min.js"
+
+# remove .{ext} from text/netlify
+[mediaTypes."text/netlify"]
+  suffixes = [""]
+  delimiter = ""
+
+# add output format for netlify _redirects
+[outputFormats.REDIRECTS]
+  mediatype = "text/netlify"
+  baseName = "_redirects"
+  isPlainText = true
+  notAlternative = true
+
+# add output format for netlify _headers
+[outputFormats.HEADERS]
+  mediatype = "text/netlify"
+  baseName = "_headers"
+  isPlainText = true
+  notAlternative = true
+
+[sitemap]
+  changefreq = "monthly"
+  filename = "sitemap.xml"
+  priority = 0.5
+
+[markup.goldmark.renderer]
+  unsafe= true
+
+[[menu.main]]
+    name = "Home"
+    url  = "/"
+    weight = 1
+
+[[menu.main]]
+    name = "Blog"
+    url  = "/blog/"
+    weight = 5

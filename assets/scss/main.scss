@@ -1,7 +1,10 @@
 @import "core/normalize";
 @import "core/breakpoints";
+
 @import "globals/variables";
+
 @import "core/body";
+
 @import "globals/layout";
 @import "globals/buttons";
 @import "globals/flexbox";
@@ -9,12 +12,18 @@
 @import "globals/images";
 @import "globals/typography";
 @import "globals/progress";
-@import "elements/hamburger";
-@import "elements/header";
-@import "elements/slider";
-@import "elements/testimonials";
-@import "elements/cta";
-@import "elements/footer";
+@import "globals/links";
+
+@import "components/hamburger";
+@import "components/header";
+@import "components/slider";
+@import "components/testimonials";
+@import "components/cta";
+@import "components/footer";
+@import "components/blog-cards";
+@import "components/post-navigation";
+
 @import "pages/default";
 @import "pages/home";
 @import "pages/blog";
+@import "pages/resume";

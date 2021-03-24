@@ -1,16 +1,21 @@
+const autoprefixer = require('autoprefixer')
+const purgecss = require('@fullhuman/postcss-purgecss')
+
 module.exports = {
-    plugins: {
-        autoprefixer: {
-            browsers: [
-                "Android 2.3",
-                "Android >= 4",
-                "Chrome >= 20",
-                "Firefox >= 24",
-                "Explorer >= 8",
-                "iOS >= 6",
-                "Opera >= 12",
-                "Safari >= 6"
-            ]
-        }
-    },
+  plugins: [
+    autoprefixer(),
+    // purgecss({
+    //   content: [
+    //     './layouts/**/*.html',
+    //     './layouts/**/*.svg',
+    //     './content/**/*.md',
+    //   ],
+    //   safelist: [
+    //     'is-active',
+    //     'nav-open',
+    //     'collapse',
+    //     'expand',
+    //   ],
+    // }),
+  ],
 }
