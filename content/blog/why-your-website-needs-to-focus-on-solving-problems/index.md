@@ -6,7 +6,7 @@ date: 2020-02-27
 image: website-planning-2500.jpg
 ---
 
-\* Article originally posted on insightcreative.com
+\* Article originally posted on <a href="https://insightcreative.com" target="_blank" rel="noreferrer">insightcreative.com</a>
 
 People often visit websites because they’re seeking a solution to a problem they have. They may need a product, service or information as a solution. Your website needs to focus on solving these problems and delivering value to real people, rather than being strictly self-promotional or only talking about yourself and your company.
 

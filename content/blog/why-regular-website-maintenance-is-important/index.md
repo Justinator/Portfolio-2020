@@ -6,7 +6,7 @@ date: 2020-08-25
 image: website-maintenance.jpg
 ---
 
-\* Article originally posted on insightcreative.com
+\* Article originally posted on <a href="https://insightcreative.com/blog/why-regular-website-maintenance-is-important/" target="_blank" rel="noreferrer">insightcreative.com</a>
 
 A common aspect of a new website build that often gets overlooked is regular website maintenance. While some websites today are “easy” to edit, they are still extremely complex software applications with thousands of files working together. Often, platforms that are trying to strip out the complexity of the web have even more moving pieces to accomplish that feat. Just like the operating system or apps on your computer or smartphone, this software needs to be kept up to date for security and performance reasons.
 

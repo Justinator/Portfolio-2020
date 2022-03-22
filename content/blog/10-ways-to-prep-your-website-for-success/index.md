@@ -6,7 +6,7 @@ date: 2019-01-24
 image: 10waystoprepyourwebsiteforsuccess.jpg
 ---
 
-\* Article originally posted on insightcreative.com
+\* Article originally posted on <a href="https://insightcreative.com/blog/10-ways-to-prep-your-website-for-success/" target="_blank" rel="noreferrer">insightcreative.com</a>
 
 Look back at your website and see how it performed over the last year. Has it been a quality asset for your business? Has it brought in plenty of new leads? Or has it been stagnant and something that you’re embarrassed to show?
 

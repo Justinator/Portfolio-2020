@@ -6,7 +6,7 @@ date: 2020-12-02
 image: static-website-development.jpg
 ---
 
-\* Article originally posted on insightcreative.com
+\* Article originally posted on <a href="https://insightcreative.com/blog/lost-in-the-static/" target="_blank" rel="noreferrer">insightcreative.com</a>
 
 In the early days of web development, the tools available for building your website were limited. A web developer would have to create and hand-code large numbers of files for a website to work and display in a browser. As the industry has evolved we have seen the release of an overwhelming amount of tools to help build, deploy and manage website content more efficiently. Some of the most common forms of this are content management systems like WordPress, Drupal and Joomla.
 

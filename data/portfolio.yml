@@ -1,32 +1,42 @@
 heading: Featured Projects
 
 projects:
+  - project_title: Insight Creative, Inc.
+    project_desc: "Development of custom built Hugo website"
+    project_image: insight-creative
+    website: https://insightcreative.com/
+
+  - project_title: A to Z Machine
+    project_desc: "Development of custom built Hugo website"
+    project_image: a-to-z-machine
+    website: https://www.atozmachine.com/
+
   - project_title: LeMense Quality Homes
-    project_desc: "Design, development, custom built WordPress theme"
+    project_desc: "Design and development of custom built WordPress theme"
     project_image: lemense-quality-homes-website
     website: https://lemensequalityhomes.com/
 
-  - project_title: CorHome
-    project_desc: "Development, custom built Hugo website"
-    project_image: corhome-website
-    website: https://corhomellc.com/
-
-  - project_title: Knope Heating & Air Conditioning
-    project_desc: "Design, development, custom built Hugo website"
-    project_image: knope-hvac-website
-    website: https://knopehvac.com/
-
   - project_title: Fox Structures
-    project_desc: "Design, development, custom built WordPress theme"
+    project_desc: "Design and development of custom built WordPress theme"
     project_image: fox-structures-website
     website: https://foxstructures.com/
 
   - project_title: LaForce
-    project_desc: "Development, custom built WordPress theme"
+    project_desc: "Development of custom built WordPress theme"
     project_image: laforce-website
     website: https://laforceinc.com/
 
   - project_title: Lamers Bus Lines
-    project_desc: "Development, custom built WordPress theme"
+    project_desc: "Development of custom built WordPress theme"
     project_image: lamers-bus-lines-website
     website: https://www.golamers.com/
+
+  - project_title: Knope Heating & Air Conditioning
+    project_desc: "Design and development of custom built Hugo website"
+    project_image: knope-hvac-website
+    website: https://knopehvac.com/
+
+  - project_title: CorHome
+    project_desc: "Development of custom built Hugo website"
+    project_image: corhome-website
+    website: https://corhomellc.com/
